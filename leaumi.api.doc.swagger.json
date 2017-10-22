@@ -1,0 +1,678 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "1.0.0",
+    "title": "Leumi Card - Leaders",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "amirr@realcommerce.co.il"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "LeumiCard.PortalApp.ApiServer",
+  "basePath": "/api/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/LeadersWelcome/GetLeadersWelcomeData": {
+      "get": {
+        "tags": [
+          "LeadersWelcome"
+        ],
+        "summary": "Returns leaders welcome data",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/WelcomeData"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/LeadersWelcome/GetLeadersMessage": {
+      "get": {
+        "tags": [
+          "LeadersWelcome"
+        ],
+        "summary": "Returns leaders welcome message",
+        "description": "Returns the message from leumi CRM. <br> Its seprate from the main request - GetLeadersWelcomeData. Becuase of the CRM long response time.י",
+        "operationId": "getInventory",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/LeadProduct/GetProductList": {
+      "get": {
+        "tags": [
+          "LeadProduct"
+        ],
+        "summary": "Returns lead product list",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProductListItemData"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/LeadProduct/GetProductDetails": {
+      "get": {
+        "tags": [
+          "LeadProduct"
+        ],
+        "summary": "Returns lead product additional details.",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ProductDetailsData"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/LeadCreditCard/AddLeadCreditCard": {
+      "post": {
+        "tags": [
+          "LeadCreditCard"
+        ],
+        "summary": "Add credit card lead.",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "LeadCreditCardData",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LeadCreditCardData"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/LeadMerchant/AddLeadMerchant": {
+      "post": {
+        "tags": [
+          "LeadMerchant"
+        ],
+        "summary": "Add merchant lead.",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "LeadMerchantData",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LeadMerchantData"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/LeadGiftCard/AddLeadGiftCard": {
+      "post": {
+        "tags": [
+          "LeadGiftCard"
+        ],
+        "summary": "Add gift card lead.",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "LeadGiftCardData",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LeadGiftCardData"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/LeadMailingListSignIn/AddLeadMailingListSignIn": {
+      "post": {
+        "tags": [
+          "LeadMailingListSignIn"
+        ],
+        "summary": "Add client to mailing list lead.",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "LeadMailingListSignInData",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LeadMailingListSignInData"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/LeadApplicationSignIn/AddApplicationSignIn": {
+      "post": {
+        "tags": [
+          "LeadApplicationSignIn"
+        ],
+        "summary": "Add client to application.",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "LeadApplicationSignInData",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LeadApplicationSignInData"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/MyLead/GetList": {
+      "get": {
+        "tags": [
+          "MyLead"
+        ],
+        "summary": "Returns current user leads.",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MyLeadItemData"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/MyLead/GetProductSummaryList": {
+      "get": {
+        "tags": [
+          "MyLead"
+        ],
+        "summary": "Returns current user leads, grouped by product.",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MyLeadsProductSummaryItemData"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/Lead/UpdateLeadStatusFromExternalResource": {
+      "post": {
+        "tags": [
+          "Lead"
+        ],
+        "summary": "Update lead status from external resource.",
+        "description": "",
+        "operationId": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "LeadId",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "path",
+            "name": "LeadersProductId",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "petstore_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
+      "flow": "implicit",
+      "scopes": {
+        "write:pets": "modify pets in your account",
+        "read:pets": "read your pets"
+      }
+    },
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "WelcomeData": {
+      "type": "object",
+      "properties": {
+        "NewLeadsCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "שדה: My Leads"
+        },
+        "MyScore": {
+          "type": "integer",
+          "format": "int64",
+          "description": "שדה: איך הולך לי"
+        }
+      }
+    },
+    "ProductListItemData": {
+      "type": "object",
+      "properties": {
+        "LeadersProductId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LeadersProductName": {
+          "type": "string"
+        }
+      }
+    },
+    "ProductDetailsData": {
+      "type": "object",
+      "properties": {
+        "LeadersProductId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LeadersProductDetails": {
+          "type": "string",
+          "description": "שדה: תיאור המוצר"
+        },
+        "LeadersExternalSite": {
+          "type": "string",
+          "description": "שדה: אתר חיצוני - לייבל"
+        },
+        "LeadersLink": {
+          "type": "string",
+          "description": "שדה: אתר חיצוני - כתובת"
+        }
+      }
+    },
+    "LeadCreditCardData": {
+      "type": "object",
+      "properties": {
+        "FirstName": {
+          "type": "string"
+        },
+        "FamilyName": {
+          "type": "string"
+        },
+        "AccountNumber": {
+          "type": "string",
+          "description": "ת.ז"
+        },
+        "CellPhone": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string",
+          "description": "הערות"
+        }
+      }
+    },
+    "LeadMerchantData": {
+      "type": "object",
+      "properties": {
+        "AccountNumber": {
+          "type": "integer",
+          "format": "int64",
+          "description": "ח''פ"
+        },
+        "MerchantName": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "CityCode": {
+          "type": "string",
+          "description": "עיר"
+        },
+        "ContactPhone": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string",
+          "description": "הערות"
+        }
+      }
+    },
+    "LeadGiftCardData": {
+      "type": "object",
+      "properties": {
+        "AccountNumber": {
+          "type": "integer",
+          "format": "int64",
+          "description": "ח''פ"
+        },
+        "AccountName": {
+          "type": "string"
+        },
+        "ContactName": {
+          "type": "string"
+        },
+        "CellPhone": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string",
+          "description": "הערות"
+        }
+      }
+    },
+    "LeadMailingListSignInData": {
+      "type": "object",
+      "properties": {
+        "FirstName": {
+          "type": "string"
+        },
+        "FamilyName": {
+          "type": "string"
+        },
+        "CellPhone": {
+          "type": "string"
+        },
+        "ObjectId": {
+          "type": "string",
+          "description": "ת.ז"
+        },
+        "Description": {
+          "type": "string",
+          "description": "הערות"
+        }
+      }
+    },
+    "LeadApplicationSignInData": {
+      "type": "object",
+      "properties": {
+        "FirstName": {
+          "type": "string"
+        },
+        "FamilyName": {
+          "type": "string"
+        },
+        "CellPhone": {
+          "type": "string"
+        },
+        "ObjectId": {
+          "type": "string",
+          "description": "ת.ז"
+        },
+        "Description": {
+          "type": "string",
+          "description": "הערות"
+        }
+      }
+    },
+    "MyLeadItemData": {
+      "type": "object",
+      "properties": {
+        "LeadersProductId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LeadersProductName": {
+          "type": "string"
+        },
+        "LeadId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LeadStatusDesc": {
+          "type": "string"
+        },
+        "CreatedDate": {
+          "type": "string"
+        },
+        "ContactName": {
+          "type": "string"
+        },
+        "LeumiHandleDepartment": {
+          "type": "string"
+        },
+        "WorkingDaysNumber": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "MyLeadsProductSummaryItemData": {
+      "type": "object",
+      "properties": {
+        "LeadersProductId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LeadersProductName": {
+          "type": "string"
+        },
+        "LeadCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LeadByStatusSummary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MyLeadsSummaryByStatusItemData"
+          }
+        }
+      }
+    },
+    "MyLeadsSummaryByStatusItemData": {
+      "type": "object",
+      "properties": {
+        "LeadStatusId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "LeadStatusDesc": {
+          "type": "string"
+        },
+        "LeadCount": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
